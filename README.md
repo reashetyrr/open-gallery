@@ -119,7 +119,7 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
+NOTE: Do NOT push the `.env` file unless you kept it clean and added required variables in it
 
 <!-- LICENSE -->
 ## License
