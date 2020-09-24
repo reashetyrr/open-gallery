@@ -33,9 +33,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/reashetyrr/open-gallery">
+  <!--<a href="https://github.com/reashetyrr/open-gallery">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a>-->
 
   <h3 align="center">Open Gallery</h3>
 
