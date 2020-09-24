@@ -86,8 +86,9 @@ php -v
 5. Check your database information with your webhost (create a database if you dont have one yet)
 6. Update the `DATABASE_URL` in the `.env` file
 7. Upload the source to your webhost using (s)ftp
-8. Go to the setup page: `/a/setup` example: `https://example.com/a/setup`
-9. Follow the steps to set up the gallery and main administrator account
+8. Setup the webhost according to symfony [information](https://symfony.com/doc/current/deployment.html)  
+9. Go to the setup page: `/a/setup` example: `https://example.com/a/setup`
+10. Follow the steps to set up the gallery and main administrator account
 
 Note: steps 2,3,4 and 6 may become obsolete in future releases and may be handled by the setup, and may become editable in the administration panel
 
