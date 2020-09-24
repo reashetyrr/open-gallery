@@ -89,7 +89,7 @@ php -v
 8. Go to the setup page: `/a/setup` example: `https://example.com/a/setup`
 9. Follow the steps to set up the gallery and main administrator account
 
-Note: steps 2,3,4 and 6 may become obsolete in future releases and may be handled by the setup
+Note: steps 2,3,4 and 6 may become obsolete in future releases and may be handled by the setup, and may become editable in the administration panel
 
 <!-- USAGE EXAMPLES -->
 ## Usage
