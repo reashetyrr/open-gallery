@@ -1,19 +1,3 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** reashetyrr, open-gallery, twitter_handle, email
--->
-
-
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -33,12 +17,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!--<a href="https://github.com/reashetyrr/open-gallery">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>-->
-
   <h3 align="center">Open Gallery</h3>
-
   <p align="center">
     Open source gallery software written in PHP
     <br />
