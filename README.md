@@ -60,7 +60,7 @@
 
 ### Built With
 * [PHP](https://php.net)
-* [Symfony](https://symfony.com)
+* [Symfony 5](https://symfony.com)
 
 
 <!-- GETTING STARTED -->
