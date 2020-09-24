@@ -80,7 +80,7 @@ php -v
 
 ### Installation
 
-1. Download a [Release]()
+1. Download a [Release](https://github.com/reashetyrr/open-gallery/releases)
 2. Go to [this symfony secret generator page](http://nux.net/secret) and copy the generated secret
 3. Paste the generated secret into the `.env` file on the line `APP_SECRET=`
 4. Change the `APP_ENV` to prod: `APP_ENV=prod`
