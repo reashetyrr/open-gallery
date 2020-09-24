@@ -180,6 +180,6 @@ Project Link: [https://github.com/reashetyrr/open-gallery](https://github.com/re
 [stars-url]: https://github.com/reashetyrr/open-gallery/stargazers
 [issues-shield]: https://img.shields.io/github/issues/reashetyrr/open-gallery.svg?style=flat-square
 [issues-url]: https://github.com/reashetyrr/repo/issues
-[license-shield]: https://img.shields.io/github/license/reashetyrr/open-gallery.svg?style=flat-square
+[license-shield]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square
 [license-url]: https://github.com/reashetyrr/open-gallery/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
