@@ -63,31 +63,30 @@
 * [Symfony](https://symfony.com)
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get the gallery up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* PHP 7.4+
+* Webserver/host
+
+To check your php version:
 ```sh
-npm install npm@latest -g
+php -v
 ```
 
 ### Installation
 
-1. Clone the repo
-```sh
-git clone https://github.com/reashetyrr/open-gallery.git
-```
-2. Install NPM packages
-```sh
-npm install
-```
-
+1. Download a [Release]()
+2. Go to [this symfony secret generator page](http://nux.net/secret) and copy the generated secret
+3. Paste the generated secret into the `.env` file on the line `APP_SECRET=`
+4. Change the `APP_ENV` to prod: `APP_ENV=prod`
+5. Check your database information with your webhost (create a database if you dont have one yet)
+6. Update the `DATABASE_URL` in the `.env` file
+7. Upload the source to your webhost using (s)ftp
 
 
 <!-- USAGE EXAMPLES -->
