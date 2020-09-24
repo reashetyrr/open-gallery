@@ -26,7 +26,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![APACHE License][license-shield]][license-url]
 
 
 
@@ -173,11 +173,11 @@ Project Link: [https://github.com/reashetyrr/open-gallery](https://github.com/re
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/reashetyrr/open-gallery.svg?style=flat-square
-[contributors-url]: https://github.com/reashetyrr/repo/graphs/contributors
+[contributors-url]: https://github.com/reashetyrr/open-gallery/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/reashetyrr/open-gallery.svg?style=flat-square
-[forks-url]: https://github.com/reashetyrr/repo/network/members
+[forks-url]: https://github.com/reashetyrr/open-gallery/network/members
 [stars-shield]: https://img.shields.io/github/stars/reashetyrr/open-gallery.svg?style=flat-square
-[stars-url]: https://github.com/reashetyrr/repo/stargazers
+[stars-url]: https://github.com/reashetyrr/open-gallery/stargazers
 [issues-shield]: https://img.shields.io/github/issues/reashetyrr/open-gallery.svg?style=flat-square
 [issues-url]: https://github.com/reashetyrr/repo/issues
 [license-shield]: https://img.shields.io/github/license/reashetyrr/open-gallery.svg?style=flat-square
