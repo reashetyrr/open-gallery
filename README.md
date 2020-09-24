@@ -148,7 +148,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache License 2.0 License. See `LICENSE` for more information.
 
 
 
@@ -181,5 +181,5 @@ Project Link: [https://github.com/reashetyrr/open-gallery](https://github.com/re
 [issues-shield]: https://img.shields.io/github/issues/reashetyrr/open-gallery.svg?style=flat-square
 [issues-url]: https://github.com/reashetyrr/repo/issues
 [license-shield]: https://img.shields.io/github/license/reashetyrr/open-gallery.svg?style=flat-square
-[license-url]: https://github.com/reashetyrr/repo/blob/master/LICENSE.txt
+[license-url]: https://github.com/reashetyrr/open-gallery/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
