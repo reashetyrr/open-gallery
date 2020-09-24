@@ -37,16 +37,16 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">Open Gallery</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Open source gallery software written in PHP
     <br />
-    <a href="https://github.com/reashetyrr/open-gallery"><strong>Explore the docs »</strong></a>
+    <!--<a href="https://github.com/reashetyrr/open-gallery"><strong>Explore the docs »</strong></a>-->
     <br />
     <br />
-    <a href="https://github.com/reashetyrr/open-gallery">View Demo</a>
-    ·
+    <!--<a href="https://github.com/reashetyrr/open-gallery">View Demo</a>
+    ·-->
     <a href="https://github.com/reashetyrr/open-gallery/issues">Report Bug</a>
     ·
     <a href="https://github.com/reashetyrr/open-gallery/issues">Request Feature</a>
@@ -75,18 +75,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/reashetyrr/open-gallery)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`reashetyrr`, `open-gallery`, `twitter_handle`, `email`
 
 
 ### Built With
-
-* []()
-* []()
-* []()
+* [PHP](https://php.net)
+* [Symfony](https://symfony.com)
 
 
 
