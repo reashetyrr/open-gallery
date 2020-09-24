@@ -27,7 +27,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -183,6 +182,4 @@ Project Link: [https://github.com/reashetyrr/open-gallery](https://github.com/re
 [issues-url]: https://github.com/reashetyrr/repo/issues
 [license-shield]: https://img.shields.io/github/license/reashetyrr/open-gallery.svg?style=flat-square
 [license-url]: https://github.com/reashetyrr/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/reashetyrr
 [product-screenshot]: images/screenshot.png
