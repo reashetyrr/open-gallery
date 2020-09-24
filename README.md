@@ -42,12 +42,12 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
+<!--* [Usage](#usage)-->
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+<!--* [Acknowledgements](#acknowledgements)-->
 
 
 
@@ -93,12 +93,12 @@ php -v
 Note: steps 2,3,4 and 6 may become obsolete in future releases and may be handled by the setup, and may become editable in the administration panel
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!--## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
-
+-->
 
 
 <!-- ROADMAP -->
@@ -136,13 +136,13 @@ Project Link: [https://github.com/reashetyrr/open-gallery](https://github.com/re
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+<!--## Acknowledgements
 
 * []()
 * []()
 * []()
 
-
+-->
 
 
 
