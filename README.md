@@ -53,20 +53,22 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Open Gallery is an open-source gallery website source, the aim is to be able to have a good looking yet simple to use gallery.
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/reashetyrr/open-gallery)
+Upon searching for gallery software we were not able to find good looking, responsive or good working gallery software.
+<!--[![Product Name Screen Shot][product-screenshot]](https://github.com/reashetyrr/open-gallery)-->
 
 
 
 ### Built With
-* [PHP](https://php.net)
+* [PHP 7.4.1](https://php.net)
 * [Symfony 5](https://symfony.com)
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get the gallery up and running follow these simple steps.
+Getting started with Open Gallery is pretty simple, make sure you have the prerequisites and follow the installation, afterwards you just login and start creating albums and uploading images or videos!
 
 ### Prerequisites
 
