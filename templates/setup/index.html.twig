@@ -1,0 +1,42 @@
+{% extends 'base.setup.html.twig' %}
+
+{% block title %}Database Information{% endblock %}
+
+{% block wrapper_classes %}d-flex{% endblock %}
+
+{% block body %}
+<div class="container flex-fill d-flex">
+    <div class="row flex-fill d-flex align-items-center">
+        <div class="col-8 m-auto">
+            <form action="{{ path('setup') }}" method="post" class="card">
+                <h2 class="card-title">
+                    Database Settings <button class="btn btn-sm float-right" type="submit">Next</button>
+                </h2>
+
+                <label for="env">Application Environment:</label>
+                <select class="alt-dm form-control mb-15" name="env" id="env">
+                    <option value="dev">Development</option>
+                    <option value="prod" selected>Production</option>
+                </select>
+
+                <label for="db_type">Host:</label>
+                <select class="alt-dm form-control mb-15" name="db_type" id="db_type">
+                    <option value="mysql">MySql</option>
+                </select>
+
+                <label for="db_host">Host:</label>
+                <input type="text" class="alt-dm form-control mb-15" name="db_host" id="db_host"/>
+
+                <label for="db_name">Name:</label>
+                <input type="text" class="alt-dm form-control mb-15" name="db_name" id="db_name"/>
+
+                <label for="db_username">Username:</label>
+                <input type="text" class="alt-dm form-control mb-15" name="db_username" id="db_username"/>
+
+                <label for="db_password">Password:</label>
+                <input type="text" class="alt-dm form-control mb-15" name="db_password" id="db_password"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

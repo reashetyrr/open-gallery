@@ -1,0 +1,51 @@
+.folder {
+  min-height: 100px;
+  border: 1px solid grey;
+  float: left;
+}
+
+.folder-nb {
+  min-height: 100px;
+}
+
+.folder a,
+.folder-nb a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.folder h4,
+.folder-nb h4,
+.item h6{
+  word-break: break-all;
+}
+
+.photos {
+  padding-bottom: 20px;
+}
+
+.photos .item {
+  padding-bottom: 30px;
+}
+
+#media-container {
+  margin-top: 25px;
+}
+
+#media-container h2.text-center {
+  width: 100%;
+}
+
+.col.header hr {
+  margin: 30px 0;
+}
+
+.col.header h4 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background: #25282c;
+  padding-right: 10px;
+}
