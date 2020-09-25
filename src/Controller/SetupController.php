@@ -12,10 +12,13 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 
+/**
+ * @Route("/a/setup")
+ */
 class SetupController extends AbstractController
 {
     /**
-     * @Route("/setup", name="setup")
+     * @Route("/", name="setup")
      */
     public function index(Request $request, KernelInterface $kernel)
     {
