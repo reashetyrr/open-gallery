@@ -5,7 +5,10 @@ namespace App\Controller;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -14,7 +17,7 @@ class SetupController extends AbstractController
     /**
      * @Route("/setup", name="setup")
      */
-    public function index(Request $request)
+    public function index(Request $request, KernelInterface $kernel)
     {
         if ($this->is_connected()) {
             return $this->redirect('/');
@@ -23,6 +26,16 @@ class SetupController extends AbstractController
 
         if (count($data) > 0) {
             $this->create_env($data);
+            $application = new Application($kernel);
+            $application->setAutoExit(false);
+
+            $input = new ArrayInput([
+                'command' => 'doctrine:migrations:migrate'
+            ]);
+            $input->setInteractive(false);
+
+            $application->run($input);
+
             return $this->redirectToRoute('setup_admin');
         }
         return $this->render('setup/index.html.twig', [
@@ -35,7 +48,9 @@ class SetupController extends AbstractController
      */
     public function setupAdmin(Request $request) {
         if ($this->is_connected()) {
-            return $this->redirect('/');
+            $user = $this->getDoctrine()->getRepository(User::class)->findById(1);
+            if ($user)
+                return $this->redirect('/');
         }
         return $this->render('setup/admin.html.twig');
     }
