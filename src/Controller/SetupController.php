@@ -71,6 +71,10 @@ class SetupController extends AbstractController
                     )
                 );
 
+                $roles = $user->getRoles();
+                $roles []= 'ROLE_ADMINISTRATOR';
+                $user->setRoles($roles);
+
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);
                 $entityManager->flush();
