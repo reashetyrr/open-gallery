@@ -51,11 +51,14 @@ class SetupController extends AbstractController
      */
     public function setupAdmin(Request $request) {
         if ($this->is_connected()) {
-            $user = $this->getDoctrine()->getRepository(User::class)->findById(1);
+            $user = $this->getDoctrine()->getRepository(User::class)->findAll();
             if ($user)
                 return $this->redirect('/');
+
+
+            return $this->render('setup/admin.html.twig');
         }
-        return $this->render('setup/admin.html.twig');
+        return $this->redirectToRoute('setup');
     }
 
     private function is_connected() {
