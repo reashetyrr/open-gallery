@@ -23,7 +23,7 @@ class SetupController extends AbstractController
     /**
      * @Route("/", name="setup")
      */
-    public function index(Request $request, KernelInterface $kernel)
+    public function index(Request $request)
     {
         if ($this->is_connected()) {
             return $this->redirect('/');
@@ -32,21 +32,28 @@ class SetupController extends AbstractController
 
         if (count($data) > 0) {
             $this->create_env($data);
-            $application = new Application($kernel);
-            $application->setAutoExit(false);
-
-            $input = new ArrayInput([
-                'command' => 'doctrine:migrations:migrate'
-            ]);
-            $input->setInteractive(false);
-
-            $application->run($input);
-
-            return $this->redirectToRoute('setup_admin');
+            return $this->redirectToRoute('setup_query');
         }
         return $this->render('setup/index.html.twig', [
             'controller_name' => 'SetupController',
         ]);
+    }
+
+    /**
+     * @Route("/query", name="setup_query")
+     */
+    public function setupQuery(KernelInterface $kernel) {
+        $application = new Application($kernel);
+        $application->setAutoExit(false);
+
+        $input = new ArrayInput([
+            'command' => 'doctrine:migrations:migrate'
+        ]);
+        $input->setInteractive(false);
+
+        $application->run($input);
+
+        return $this->redirectToRoute('setup_admin');
     }
 
     /**
