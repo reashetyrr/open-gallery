@@ -84,6 +84,18 @@ class SetupController extends AbstractController
         return $this->redirectToRoute('setup');
     }
 
+    /**
+     * @Route("/done", name="setup_done")
+     */
+    public function setupDone() {
+        if (!$this->is_connected()) return $this->redirectToRoute('setup');
+
+        $user = $this->getDoctrine()->getRepository(User::class)->findAll();
+        if (!$user) return $this->redirectToRoute('setup_admin');
+
+        return $this->render('setup/done.html.twig');
+    }
+
     private function is_connected() {
         try {
             $em = $this->getDoctrine()->getManager();
