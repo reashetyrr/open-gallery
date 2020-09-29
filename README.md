@@ -86,7 +86,7 @@ php -v
 3. Setup the webhost according to symfony [information](https://symfony.com/doc/current/deployment.html)  
 4. Go to the setup page: `/s/setup` example: `https://example.com/s/setup`
 5. Follow the steps to set up the gallery and main administrator account
-6. The setup will create the database before guiding you to the main administrator account information
+6. The setup will create the database tables before guiding you to the main administrator account information
 
 <!-- USAGE EXAMPLES -->
 <!--## Usage
