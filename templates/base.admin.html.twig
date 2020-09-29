@@ -29,6 +29,33 @@
     <!-- Navbar start -->
     <nav class="navbar">
         <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+        <ul class="navbar-nav ml-auto d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
+{#            <li class="nav-item active">#}
+{#                <a href="#" class="nav-link">Docs</a>#}
+{#            </li>#}
+            <li class="nav-item dropdown with-arrow">
+                <a class="nav-link" data-toggle="dropdown" id="nav-link-dropdown-toggle">
+                    <i class="far fa-user"></i>
+                    <i class="fa fa-angle-down ml-5" aria-hidden="true"></i> <!-- ml-5= margin-left: 0.5rem (5px) -->
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-link-dropdown-toggle">
+                    <span class="dropdown-item">{{ app.user.username }}</span>
+                    <div class="dropdown-divider"></div>
+{#                    <a href="#" class="dropdown-item">Functions</a>#}
+{#                    <a href="#" class="dropdown-item">#}
+{#                        Analytics#}
+{#                        <strong class="badge badge-success float-right">New</strong> <!-- float-right = float: right -->#}
+{#                    </a>#}
+{#                    <div class="dropdown-divider"></div>#}
+                    <div class="dropdown-item">
+                        <a href="{{ path('app_logout') }}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign out
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </nav>
     <!-- Navbar end -->
 
@@ -57,5 +84,6 @@
 
 <!-- Halfmoon JS -->
 <script src="{{ asset('assets/external/halfmoon-1.0.4/js/halfmoon.min.js') }}"></script>
+<script src="{{ asset('assets/external/fontawesome-free-5.14.0-web/js/all.min.js') }}"></script>
 </body>
 </html>

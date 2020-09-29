@@ -13,9 +13,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiController extends AbstractController
 {
     /**
-     * @Route("/{route}", name="api")
+     * @Route("/{route}", name="api", requirements={"route"=".+"})
      */
-    public function index(Request $request)
+    public function index(Request $request, $route)
     {
         $page = $request->query->get('page');
         // grab all albums and possibly all media matching the route

@@ -1,20 +1,182 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}- Home{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active" aria-current="page"><a href="#"><i class="fas fa-home"></i></a></li>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/projects/open-gallery/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/projects/open-gallery/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
+<div class="container" id="scroll-trigger">
+    <div class="row">
+        <div class="col header">
+            <hr style="margin-top: 30px;">
+            <h4 class="text-muted">Directories</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="container px-md-15">
+                <div class="row" id="folder-container">
+                    <div class="grid-sizer col-xs-12 col-md-2"></div>
+                    <template id="folder-template">
+                        <div class="folder-nb col-xs-12 col-md-2 grid-item">
+                            <a class="text-center text-muted" href="">
+                                <i class="fas fa-folder-open fa-fw fa-8x text-primary"></i>
+                                <h4>title</h4>
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col header">
+            <hr style="margin-top: 30px;">
+            <h4 class="text-muted">Media</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="container px-md-15">
+                <div id="media-container" class="row photos hidden grid">
+                    <div class="grid-sizer col-12 col-md-2"></div>
+                    <template id="photo-template">
+                        <div class="item grid-item col-12 col-md-2"> {# col-sm-6 col-md-4 col-lg-3 #}
+                            <a class="html5lightbox" data-group="photos" href="/desk.jpg" data-nativehtml5controls="true" style="position:relative">
+                                <h6 style="position: absolute; width: 100%" class="text-center text-light"></h6>
+                                <img class="img-fluid" src="/desk.jpg">
+                            </a>
+                        </div>
+                    </template>
+                    <template id="video-template">
+                        <div class="item grid-item col-12 col-md-2"> {# col-sm-6 col-md-4 col-lg-3 #}
+                            <a href="/desk.jpg" data-group="videos" class="html5lightbox" data-nativehtml5controls="true" style="position:relative">
+                                <h6 class="text-light text-center"style="position: absolute; width: 100%"></h6>
+                                <span class="badge badge-secondary video-duration" style="position: absolute; top: 25px;"></span>
+                                <video class="img-fluid" preload="metadata">
+                                    <source src="" type="">
+                                </video>
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        let busy = false;
+        let total_results = 0;
+        let set_dirs = false;
+        const directory_container = $('#folder-container');
+        const media_container = $('#media-container');
+
+        function parse_api_result(results) {
+            const {directories, files} = results.results;
+            total_results = results.total_items;
+            page_dir_only = results.dir_only;
+
+            const added_items = files.map(file => {
+                let mime_type = file.ext;
+                if (['mp4', 'webm', 'avi', 'wmv'].includes(mime_type)) {
+                    if (mime_type === 'mov') mime_type = 'mp4';
+                    const template = document.querySelector('#video-template');
+                    const media_html = $(template.content.cloneNode(true));
+                    media_html.find('h6').text(file.text);
+                    media_html.find('a.html5lightbox').prop('href', file.url).prop('data-src', file.url);
+                    const video_tag = media_html.find('video.img-fluid');
+                    video_tag.find('source').prop('src', file.url).prop('type', `video/${mime_type}`);
+
+                    video_tag.on('loadedmetadata', event => {
+                        const duration = video_tag.get(0).duration;
+                        const minutes = Math.floor(duration / 60);
+                        const seconds = Math.ceil(duration % 60);
+                        $(event.currentTarget).closest('a').find('.video-duration').text(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+                    });
+                    return media_html.get(0).children[0];
+                } else {
+                    const template = document.querySelector('#photo-template');
+                    const media_html = $(template.content.cloneNode(true));
+                    media_html.find('h6').text(file.text);
+                    media_html.find('a.html5lightbox').prop('href', file.url).prop('data-src', file.url);
+                    media_html.find('img.img-fluid').prop('src', file.url);
+                    return media_html.get(0).children[0];
+                }
+            });
+
+            $('.html5lightbox').html5lightbox();
+            if (!set_dirs) {
+                const added_directories = directories.map(directory => {
+                    const template = document.querySelector('#folder-template');
+                    const folder_html = $(template.content.cloneNode(true));
+                    folder_html.find('h4').text(directory.text);
+                    folder_html.find('a').prop('href', directory.url);
+                    return folder_html;
+                });
+                directory_container.append(added_directories);
+                directory_container.masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer',
+                    percentPosition: true,
+                    gutter: 10
+                });
+                set_dirs = true;
+            }
+            imagesLoaded(added_items, () => {
+                media_container.infiniteScroll( 'appendItems', added_items );
+                media_container.masonry( 'appended', added_items );
+                if (added_items.length < 20) media_container.infiniteScroll('destroy')
+            });
+            /*media_container.imagesLoaded( function() {
+                media_container.infiniteScroll('appendItems', added_items);
+            });*/
+            busy = false;
+        }
+
+        async function get_content(page=1) {
+            if (busy) return Promise.resolve('busy');
+            busy = true;
+            console.log(`Get content called, page: ${page}`)
+            let url = '/api/{{ route }}';
+            url += `?page=${page}`;
+            const results = await $.getJSON({
+                url: url
+            });
+            parse_api_result(results);
+            return Promise.resolve('done');
+        }
+
+        (async () => {
+            const msnry = media_container.masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true,
+                gutter: 10
+            });
+
+
+            media_container.infiniteScroll({
+                path: `/api/{{ route }}?page={{ '{{#}}' }}`,
+                append: false,
+                responseType: 'text',
+                elementScroll: '.content-wrapper',
+                outlayer: msnry,
+                history: false
+            });
+
+            media_container.on( 'load.infiniteScroll', function( event, response ) {
+                // parse JSON
+                const data = JSON.parse( response );
+                parse_api_result(data);
+                // do something with JSON...
+            });
+
+            await get_content();
+        })();
+    </script>
 {% endblock %}

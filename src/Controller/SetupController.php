@@ -5,8 +5,6 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
-use App\Form\UserType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +16,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 /**
  * @Route("/s/setup")
  */
-class SetupController extends AbstractController
+class SetupController extends BaseController
 {
     /**
      * @Route("/", name="setup")
@@ -107,16 +105,6 @@ class SetupController extends AbstractController
         return $this->render('setup/done.html.twig');
     }
 
-    private function is_connected() {
-        try {
-            $em = $this->getDoctrine()->getManager();
-            $em->getConnection()->connect();
-            $em->getRepository(User::class)->findAll();
-            return true;
-        } catch (\Exception $exception) {
-            return false;
-        }
-    }
 
     private function create_env($data) {
         $env_location = '../.env';

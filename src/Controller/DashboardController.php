@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/a")
  * @IsGranted("ROLE_ADMINISTRATOR")
  */
-class DashboardController extends AbstractController
+class DashboardController extends BaseController
 {
     /**
      * @Route("/dashboard", name="dashboard")
