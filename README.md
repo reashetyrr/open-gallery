@@ -84,7 +84,7 @@ php -v
 1. Download a [Release](https://github.com/reashetyrr/open-gallery/releases)
 2. Upload the source to your webhost using (s)ftp
 3. Setup the webhost according to symfony [information](https://symfony.com/doc/current/deployment.html)  
-4. Go to the setup page: `/a/setup` example: `https://example.com/a/setup`
+4. Go to the setup page: `/s/setup` example: `https://example.com/s/setup`
 5. Follow the steps to set up the gallery and main administrator account
 6. The setup will create the database before guiding you to the main administrator account information
 
