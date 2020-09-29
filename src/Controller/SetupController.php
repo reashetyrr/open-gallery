@@ -16,7 +16,7 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
- * @Route("/a/setup")
+ * @Route("/s/setup")
  */
 class SetupController extends AbstractController
 {
