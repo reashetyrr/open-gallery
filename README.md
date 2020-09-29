@@ -120,7 +120,7 @@ NOTE: Do NOT push the `.env` file, changes into the `.env` should be handled by 
 <!-- LICENSE -->
 ## License
 
-Distributed under the Apache License 2.0 License. See `LICENSE` for more information.
+Distributed under the Apache 2.0 License. See [LICENSE](https://github.com/reashetyrr/open-gallery/blob/master/LICENSE) for more information.
 
 
 
