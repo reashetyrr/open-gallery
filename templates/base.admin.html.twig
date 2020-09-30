@@ -20,7 +20,7 @@
 <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
 
 <!-- Page wrapper start -->
-<div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="overlayed-sm-and-down">
+<div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="full-height overlayed-sm-and-down">
 
     <!-- Sticky alerts (toasts), empty container -->
     <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
@@ -64,6 +64,26 @@
 
     <!-- Sidebar start -->
     <div class="sidebar">
+        <div class="sidebar-menu">
+            <!-- Sidebar brand -->
+            <a href="#" class="sidebar-brand">
+                Open-Source Gallery
+            </a>
+            <!-- Sidebar content with the search box -->
+{#            <div class="sidebar-content">#}
+{#                <input type="text" class="form-control" placeholder="Search">#}
+{#                <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->#}
+{#                    Press <kbd>/</kbd> to focus#}
+{#                </div>#}
+{#            </div>#}
+            <!-- Sidebar links and titles -->
+            <h5 class="sidebar-title"></h5>
+            <div class="sidebar-divider"></div>
+            <a href="{{ path('dashboard') }}" class="sidebar-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-images"></i> Albums</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-users"></i> Users</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a>
+        </div>
         <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
     </div>
     <!-- Sidebar end -->
