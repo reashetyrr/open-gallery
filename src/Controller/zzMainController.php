@@ -5,10 +5,10 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends BaseController
+class zzMainController extends BaseController
 {
     /**
-     * @Route("/", requirements={"route"=".*"}, name="main")
+     * @Route("/{route}", requirements={"route"=".*"}, name="main")
      */
     public function index($route)
     {
