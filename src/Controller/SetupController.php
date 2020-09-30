@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Setting;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
@@ -51,6 +52,21 @@ class SetupController extends BaseController
 
         $application->run($input);
 
+        $basic_settings = [
+            'site_name' => 'Open Gallery',
+            'account_required' => '0',
+            'theme' => 'default'
+        ];
+
+        $em = $this->getDoctrine()->getManager();
+        foreach ($basic_settings as $type => $setting) {
+            $sett =  new Setting();
+            $sett->setSettingType($type);
+            $sett->setSettingValue($setting);
+
+            $em->persist($sett);
+        }
+        $em->flush();
         return $this->redirectToRoute('setup_admin');
     }
 
